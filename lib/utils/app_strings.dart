@@ -1,0 +1,46 @@
+class AppStrings{
+  static const String  CONFIRM_PURCHASE="Confirm Purchase";
+  static const String  KHANA="Khana";
+  static const String  JOIN_NOW="Join Now";
+  static const String  PROVIDER="Provider";
+  static const String  NEEDY="Needy";
+  static const String  GET_STARTED="Get Started";
+  static const String  GET_STARTEDD="Get started with us";
+  static const String  NAME="Name";
+  static const String  EMAIL="Email";
+  static const String  SIGN_UP="Sign up";
+  static const String  SIGN_IN="Sign in";
+  static const String  CITY="City";
+  static const String  CONTACT="Contact Number";
+  static const String  ALREADY_ACCONT="Already have an account?";
+  static const String  DONOT_ACCONT="Do not have an account?";
+  static const String  LOGIN="Login";
+  static const String  SOME_THING="Some thing went wrong";
+  static const String  LOGIN_AS="Login as";
+  static const String  PASSWORD="Password";
+  static const String  CONFIRM_PASSWORD="Confirm Password";
+  static const String  ORGANIZATION_NAME="Organization Name";
+  static const String  BACHAO="Bachao";
+  static const String  MODERN="Modern Asia Diner";
+  static const String  RECEIPT="Receipt";
+  static const String  PICK_UP="Pick up your order before 21:00";
+  static const String  PICK_IT="You can pick it up right now,too";
+  static const String  JANE_DOE="Jane Doe";
+  static const String  DIRECTION="Directions";
+  static const String  DATE="9/24.18 11:15";
+  static const String  READY="Red curry chicken";
+  static const String  PORTION="1 Portion";
+  static const String  DETAILS="4.50" +"\u{20B9}"+"will be paid with your credit.";
+  static const String  ADD_MORE="Add more to your order";
+  static const String  WANT_TO_DONATE="Want to donate";
+  static const String  CARD_ENDING="Card ending in 0008";
+  static const String  SLIDE_TO_CONFIRM="Slide to confirm";
+  static const String  DETAILS_TWO="Spicy chicken dish served with rice";
+
+  static const String BEARER_TOKEN_KEY_PROVIDER = "bearer_token";
+  static const String BEARER_TOKEN_KEY_NEDDY = "bearer_token";
+  static const String CURRENT_NEEDY_DATA_KEY = "current_user_data";
+  static const String CURRENT_PROVIDER_DATA_KEY = "current_needy_data";
+  static const String CURRENT_SELLER_DATA_KEY = "current_provider_data";
+  static const String NOTIFICATION_MESSAGE_ID_KEY = "notification_message_id";
+}
