@@ -33,6 +33,7 @@ class _SignInScreenState extends State<SignInScreen> {
   ProvidersProvider? _providersProvider;
   TextEditingController _emailController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
+
   Future<void> signIn({String? organizationId}) async {
     AppDialogs.progressAlertDialog(context: context);
     Response response;
@@ -44,7 +45,7 @@ class _SignInScreenState extends State<SignInScreen> {
 
     try {
       print(json.encode(body));
-      response = await dio.post("http://localhost:3000/users/login",
+      response = await dio.post("http://192.168.3.102:3000/users/login",
           data: json.encode(body),
           options: Options(
             headers: {
@@ -56,10 +57,13 @@ class _SignInScreenState extends State<SignInScreen> {
 
       if (response.statusCode == 200) {
         if (widget.fromNeedy!) {
+          print("needy ${widget.fromNeedy!}");
           SharedPreference()
               .setBearerTokenForNeedy(token: response.data['token'].toString());
           getuserData(token: response.data['token'].toString());
         } else {
+          print("needy2 ${widget.fromNeedy!}");
+          print("needy token ${response.data['token']}");
           SharedPreference().setBearerTokenForProvider(
               token: response.data['token'].toString());
           getuserData(token: response.data['token'].toString());
@@ -92,7 +96,7 @@ class _SignInScreenState extends State<SignInScreen> {
       //final value = sharedPreferences.setString('accessToken', '');
 
       final res = await dio.get(
-        'https://localhost:3000/users/profile',
+        'http://192.168.3.102:3000/users/profile',
         options: Options(
           headers: {
             'Authorization': 'Bearer $token',

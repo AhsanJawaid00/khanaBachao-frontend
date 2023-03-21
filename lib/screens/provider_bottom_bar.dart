@@ -103,7 +103,9 @@ class _ProviderMainMenuState extends State<ProviderMainMenu> {
 String? token= SharedPreference().getBearerTokenForNeedy();
 
     try {
-      response=await  dio.post("https://lakhani-khana-bachao-app.herokuapp.com/users/logout", data: null,
+      // print("env variable ${dotenv.env}");
+
+      response=await  dio.post("http://192.168.3.102:3000/users/logout", data: null,
         options: Options(
           headers: {
             'Authorization': 'Bearer $token',
