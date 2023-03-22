@@ -13,6 +13,7 @@ import 'package:tes/screens/ExploreScreen.dart';
 import 'package:tes/screens/FoodDetails.dart';
 import 'package:tes/screens/HomeScreen.dart';
 import 'package:tes/shared_preference.dart';
+import 'package:tes/urls/url_constants.dart';
 import 'package:tes/utils/app_strings.dart';
 
 import 'role_selection_screen.dart';
@@ -105,7 +106,7 @@ String? token= SharedPreference().getBearerTokenForNeedy();
     try {
       // print("env variable ${dotenv.env}");
 
-      response=await  dio.post("http://192.168.3.102:3000/users/logout", data: null,
+      response=await  dio.post("${Constantsurl.CONSTANT_URL}/users/logout", data: null,
         options: Options(
           headers: {
             'Authorization': 'Bearer $token',

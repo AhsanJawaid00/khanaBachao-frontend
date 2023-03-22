@@ -9,6 +9,7 @@ import 'package:tes/models/food_data_model.dart';
 import 'package:tes/provider/needy_provider.dart';
 import 'package:tes/screens/receipt_screen.dart';
 import 'package:tes/shared_preference.dart';
+import 'package:tes/urls/url_constants.dart';
 import 'package:tes/utils/app_color.dart';
 import 'package:tes/utils/app_fonts.dart';
 import 'package:tes/utils/app_strings.dart';
@@ -51,7 +52,7 @@ String? token;
 
 
     try {
-      response=await  dio.post("https://lakhani-khana-bachao-app.herokuapp.com/orders", data: body,
+      response=await  dio.post("${Constantsurl.CONSTANT_URL}/orders", data: body,
         options: Options(
           headers: {
             'Authorization': 'Bearer $token',

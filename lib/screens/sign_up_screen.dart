@@ -11,6 +11,7 @@ import 'package:tes/custom_widgets/variable_text.dart';
 import 'package:tes/screens/login_screen.dart';
 import 'package:tes/screens/main_screen.dart';
 import 'package:tes/screens/receipt_screen.dart';
+import 'package:tes/urls/url_constants.dart';
 import 'package:tes/utils/app_color.dart';
 import 'package:tes/utils/app_fonts.dart';
 import 'package:tes/utils/app_strings.dart';
@@ -53,7 +54,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
 
     try {
-      response=await  dio.post("https://lakhani-khana-bachao-app.herokuapp.com/organizations", data: body);
+      response=await  dio.post("${Constantsurl.CONSTANT_URL}/organizations", data: body);
 
       if(response.statusCode==201){
         print('response: ${response.data['organization_id']}');
@@ -91,7 +92,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
 
     try {
-      response=await  dio.post("https://lakhani-khana-bachao-app.herokuapp.com/users", data: body);
+      response=await  dio.post("${Constantsurl.CONSTANT_URL}/users", data: body);
         setLoading(false);
       if(response.statusCode==201){
 

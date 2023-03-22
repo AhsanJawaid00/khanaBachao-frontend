@@ -16,6 +16,7 @@ import 'package:tes/screens/provider_bottom_bar.dart';
 import 'package:tes/screens/receipt_screen.dart';
 import 'package:tes/screens/sign_up_screen.dart';
 import 'package:tes/shared_preference.dart';
+import 'package:tes/urls/url_constants.dart';
 import 'package:tes/utils/app_color.dart';
 import 'package:tes/utils/app_fonts.dart';
 import 'package:tes/utils/app_strings.dart';
@@ -45,7 +46,7 @@ class _SignInScreenState extends State<SignInScreen> {
 
     try {
       print(json.encode(body));
-      response = await dio.post("http://192.168.3.102:3000/users/login",
+      response = await dio.post("${Constantsurl.CONSTANT_URL}/users/login",
           data: json.encode(body),
           options: Options(
             headers: {
@@ -96,7 +97,7 @@ class _SignInScreenState extends State<SignInScreen> {
       //final value = sharedPreferences.setString('accessToken', '');
 
       final res = await dio.get(
-        'http://192.168.3.102:3000/users/profile',
+        '${Constantsurl.CONSTANT_URL}/users/profile',
         options: Options(
           headers: {
             'Authorization': 'Bearer $token',

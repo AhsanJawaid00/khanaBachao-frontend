@@ -10,6 +10,7 @@ import 'package:tes/models/food_data_model.dart';
 import 'package:tes/provider/needy_provider.dart';
 import 'package:tes/screens/confirm_purchase.dart';
 import 'package:tes/shared_preference.dart';
+import 'package:tes/urls/url_constants.dart';
 import 'package:tes/utils/app_color.dart';
 import 'package:tes/utils/app_fonts.dart';
 import 'package:tes/utils/app_strings.dart';
@@ -61,7 +62,7 @@ class _NeedyMainMenuState extends State<NeedyMainMenu> {
       //final value = sharedPreferences.setString('accessToken', '');
 
       final res = await dio.get(
-        'https://lakhani-khana-bachao-app.herokuapp.com/food',
+        '${Constantsurl.CONSTANT_URL}/food',
         options: Options(
           headers: {
             'Authorization': 'Bearer $token',
@@ -830,7 +831,7 @@ getUserData(){
 
 
     try {
-      response=await  dio.post("http://192.168.3.102:3000/users/logout", data: null,
+      response=await  dio.post("${Constantsurl.CONSTANT_URL}/users/logout", data: null,
         options: Options(
           headers: {
             'Authorization': 'Bearer $token',

@@ -6,6 +6,7 @@ import 'package:tes/custom_widgets/dialogs.dart';
 import 'package:tes/provider/customSlider.dart';
 import 'package:tes/provider/provider.dart';
 import 'package:tes/shared_preference.dart';
+import 'package:tes/urls/url_constants.dart';
 import 'package:tes/utils/app_strings.dart';
 class FoodDetails extends StatefulWidget {
   FoodDetails({Key? key}) : super(key: key);
@@ -53,7 +54,7 @@ class _FoodDetailsState extends State<FoodDetails> {
 
 
     try {
-      response=await  dio.post("https://lakhani-khana-bachao-app.herokuapp.com/food", data: body,
+      response=await  dio.post("${Constantsurl.CONSTANT_URL}/food", data: body,
         options: Options(
           headers: {
             'Authorization': 'Bearer $token',
